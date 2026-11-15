@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9f2">
+  <meta name="description" content="DayList 是簡單的日常待辦清單，可新增、勾選、刪除事項，資料儲存在自己的瀏覽器。">
+  <title>DayList｜我的日常待辦清單</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="DayList 首頁">
+        <span class="brand-symbol" aria-hidden="true">✓</span>
+        <span>DayList<span class="brand-dot">.</span></span>
+      </a>
+      <div class="date-label" id="today-label" aria-label="今天日期">今天也要加油！</div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="main-title">
+        <span class="eyebrow">MY LITTLE CHECKLIST</span>
+        <h1 id="main-title">今天想完成<br><span>什麼事情？</span></h1>
+        <p>把要做的事記下來，一件一件完成就好。</p>
+        <div class="hero-decoration" aria-hidden="true">✳</div>
+      </section>
+
+      <section class="todo-panel" aria-labelledby="list-title">
+        <div class="panel-heading">
+          <div>
+            <div class="panel-kicker">TODAY'S PLAN</div>
+            <h2 id="list-title">我的待辦事項</h2>
+          </div>
+          <span class="today-badge" aria-hidden="true">☀ 今日清單</span>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label class="visually-hidden" for="task-input">新增待辦事項</label>
+          <input id="task-input" name="task" type="text" placeholder="例如：整理上課筆記" maxlength="60" required autocomplete="off">
+          <button type="submit" class="add-button">＋ 新增</button>
+        </form>
+        <p class="form-hint">按下新增，或在輸入後按 Enter 即可加入清單。</p>
+
+        <div class="progress-section" aria-live="polite">
+          <div class="progress-caption">
+            <span>今日進度</span>
+            <strong id="progress-label">已完成 0 / 0 項</strong>
+          </div>
+          <div id="progress-track" class="progress-track" role="progressbar" aria-label="待辦事項完成率" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-label="待辦清單"></ul>
+        <p id="empty-state" class="empty-state" hidden>目前沒有待辦事項。新增一件小事，開始今天吧！</p>
+
+        <div class="panel-footer">
+          <span>已完成的事項會打勾，並保留在清單中。</span>
+          <button class="clear-button" id="clear-completed" type="button">清除已完成</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Made for the little things ✦</span>
+      <span>資料只儲存在此瀏覽器，不會上傳。</span>
+    </footer>
+  </div>
+</body>
+</html>
